@@ -1,0 +1,64 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/projetos.css' %}">
+
+{% endblock style %}
+
+{% block main %}
+
+<div class="container">
+
+    <div class="Retangulos">
+
+
+
+        {% for projeto in projetos %}
+
+
+        <div class="texto">
+
+            {% load static %}
+            <h3><img src=" ../../../media/{{projeto.imagem}}" alt=""></h3>
+
+            <li><b>{{projeto.nome}}</b></li>
+            <li>Descrição: {{projeto.descrição}}</li>
+            <li>Ano de realização: {{projeto.ano}}</li>
+            <li>Participação:
+                {% for aluno in projeto.alunos.all %}
+                <ol class="nomes">
+                    {{aluno.nome}}
+                </ol>
+
+                {% endfor %}
+            </li>
+
+            {% if not projeto.git == null %}
+
+            <li>Github (ou link): <a href="{{projeto.git}}">{{projeto.nome}}</a>
+
+            </li>
+
+            {% endif %}
+
+            {% if projeto.git == null %}
+
+            <li>Não existe link para download</a>
+
+            </li>
+
+            {% endif %}
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </div>
+</div>
+
+
+{% endblock main %}

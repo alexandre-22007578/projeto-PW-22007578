@@ -1,0 +1,19 @@
+.container{
+    position: absolute;
+    background-image: url("../images/home.gif");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    padding-top: 75px;
+    z-index:-5;
+
+}
+
+
+
+.backgroundTexto{
+    position: relative;
+}

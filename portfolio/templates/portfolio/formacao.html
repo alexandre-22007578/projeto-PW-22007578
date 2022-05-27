@@ -1,0 +1,322 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/formacao.css' %}"/>
+
+{% endblock style %}
+
+
+{{% block main %}
+
+<div class="container">
+    <a href="#1ano">1ano</a>
+    <br>
+    <a href="#2ano">2ano</a>
+    <br>
+    <a href="#3ano">3ano</a>
+    <br> <br> <br>
+
+
+    <h1 id="1ano">1ªano</h1>
+
+    Frequentado no ano letivo 2020/2021
+    <br>
+    <p></p>
+
+    <h2>1ºsemestre</h2>
+
+    <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 1 and cadeira.semestre == 1%}
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+    <h2>2 semetre</h2>
+
+     <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 1 and cadeira.semestre == 2%}
+
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+
+    <h1 id="2ano">2ªano</h1>
+
+    Frequentado no ano letivo 2021/2022
+    <br>
+    <p></p>
+
+    <h2>1ºsemestre</h2>
+
+    <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 2 and cadeira.semestre == 1%}
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+    <h2>2 semetre</h2>
+
+    <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 2 and cadeira.semestre == 2%}
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+        <h1 id="3ano">3ªano</h1>
+
+    Frequentado no ano letivo 2022/2023
+    <br>
+    <p></p>
+
+    <h2>1ºsemestre</h2>
+
+    <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 3 and cadeira.semestre == 1%}
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+    <h2>2 semetre</h2>
+
+    <div class="Retangulos">
+
+
+        {% for cadeira in cadeiras %}
+
+        {% if cadeira.ano == 3 and cadeira.semestre == 2%}
+
+        <div class="texto">
+
+            <li><b>{{cadeira.nome}}</b></li>
+            <li>Creditos:<span class="ECTS">({{cadeira.creditos}} ECTS)</span></li>
+            <li>rank (1-5): {{cadeira.rank}}🌟</li>
+            <li>professores:
+                {% for professor in cadeira.professores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+
+            </li>
+            {% endfor %}
+            <li>
+                <a href="{{cadeira.link}}">{{cadeira.nome}}</a>
+            </li>
+            {% if not cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol><a href="projetos">{{cadeira.projetos.nome}}</a></ol>
+            </li>
+            {% endif %}
+            {% if cadeira.projetos == null %}
+
+            <li>Projetos:
+                <ol>Nesta cadeira não foi realizado nenhum projeto final</a></ol>
+            </li>
+
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock main %}

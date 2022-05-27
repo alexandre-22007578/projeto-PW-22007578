@@ -1,0 +1,73 @@
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
+from .forms import PostForm
+from .forms import QuizzForm
+from .models import Post
+from .models import Quizz
+from .models import Projetos
+from .models import Cadeira
+
+
+def home_page_view(request):
+    return render(request, 'portfolio/home.html')
+
+def competencias(request):
+    return render(request, 'portfolio/competencias.html')
+
+def formacao(request):
+    context = {'cadeiras': Cadeira.objects.all()}
+    return render(request, 'portfolio/formacao.html', context)
+
+def projetos(request):
+    context = {'projetos': Projetos.objects.all()}
+    return render(request, 'portfolio/projetos.html', context)
+
+def about(request):
+    return render(request, 'portfolio/about.html')
+
+def blog(request):
+    context = {'post': Post.objects.all()}
+    return render(request, 'portfolio/blog.html', context)
+
+
+def quizzPage(request):
+    quizz = QuizzForm(request.POST, use_required_attribute=False)
+    if quizz.is_valid():
+        quizz.save()
+        return HttpResponseRedirect(request.patch_info)
+
+    context = {'form': quizz}
+
+    return render(request, 'portfolio/quizz.html', context)
+
+def nova_post_view(request):
+
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:blog'))
+
+    context = {'form': form}
+
+    return render(request, 'portfolio/nova.html', context)
+
+def edita_post_view(request, Post_id):
+
+    post = Post.objects.get(id=Post_id)
+    form = PostForm(request.POST or None, instance=post)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(reverse('portfolio:blog'))
+
+    context = {'form': form, 'Post_id': Post_id}
+    return render(request, 'portfolio/edita.html', context)
+
+
+def apaga_post_view(request, Post_id):
+    Post.objects.get(id=Post_id).delete()
+    return HttpResponseRedirect(reverse('portfolio:blog'))
+
+
+

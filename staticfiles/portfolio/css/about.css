@@ -1,0 +1,41 @@
+.container{
+    position: absolute;
+    background-color: LightGrey;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    padding-top: 75px;
+    z-index:-5;
+
+}
+
+
+
+.Retangulos{
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   grid-template-rows: repeat(3, 100px);
+   margin-top: 15px;
+   margin-left: 20px;
+   padding: 30px;
+}
+
+.Retangulos div{
+    width: 100%;
+    height: 500px;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: Cornsilk;
+    padding: 20px;
+    margin: 7px;
+}
+.Retangulos img{
+    display: flex;
+}
+
+.texto{
+margin-left:400px;
+}

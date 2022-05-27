@@ -1,0 +1,64 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/blog.css' %}">
+
+{% endblock style %}
+
+{% block main %}
+<div class="container">
+
+    <div class="NEWPOST">
+        <div>
+            <a href="{% url 'portfolio:nova' %}" class="btn btn-success btn-block">+ Novo Post</a>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="Retangulos">
+        {% for posts in post %}
+
+
+        <div>
+
+            <b>Post numero:</b> {{posts.id}}
+            <br>
+            <b>Titulo:</b>{{ posts.titulo }}
+            <br>
+            <b>Descrição:</b>{{ posts.descrição }}
+            <br>
+            {% if posts.prioridade == 1 %}
+            <b>Prioridade:</b>baixa
+            {% endif %}
+            {% if posts.prioridade == 2 %}
+            <b>Prioridade:</b>media
+            {% endif %}
+            {% if posts.prioridade == 3 %}
+            <b>Prioridade:</b>alta
+            {% endif %}
+            <br>
+            {% if not posts.concluido %}
+            <b>Concluida:</b> A realizar
+            {% endif %}
+            {% if posts.concluido %}
+            <b>Concluida:</b> Concluida
+            {% endif %}
+            <br>
+            <b>Data de criação:</b>{{ posts.criado }}
+            <a href="{% url 'portfolio:edita' posts.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'portfolio:apaga' posts.id %}" class="btn btn-warning" style="margin-left:80%;">Apagar</a>
+            <br>
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+</div>
+
+{% endblock main %}
+
+
+
+

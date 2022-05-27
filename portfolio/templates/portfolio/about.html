@@ -1,0 +1,36 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/about.css' %}">
+
+{% endblock style %}
+
+{% block main %}
+<div class="container">
+    <div class="Retangulos">
+        <div>
+            <h1>Alexandre Costa</h1>
+            <img src="../../static/portfolio/images/about.png" alt="erro">
+        </div>
+        <span class="texto">
+            Sou o Alexandre Costa, nascido a 20-02-2002 em Lisboa e sou fluente na língua Portuguesa e na língua Inglesa.
+            <br><br><br>
+            Sou aluno de engenharia Informática do 2º ano da <a
+                href="https://www.ulusofona.pt/licenciaturas/engenharia-informatica">Universidade Lusófona</a> em Lisboa.
+            <br><br><br>
+            Sou uma pessoa bastante preocupada com o outro e alguns exemplos disso são o facto de ser dador de sangue e praticar voluntariado ao longo do ano, mas mais intenso na Época natalícia atraves da associação <a
+                href="https://remar.pt/">REMAR</a>.
+            <br><br><br>
+            Sou jogador de poker por uma equipa profissional (<a href="https://exploit.pt/">exploit</a>) e pratico <a
+                href="https://www.zerozero.pt/player.php?id=674224&epoca_id=151">desporto</a> nos tempos livres.
+            <br><br><br>
+            Podem-me contactar através do <a href="https://www.linkedin.com/in/alexandre-costa-b63347209/">linkedin</a>, <a
+                href="https://github.com/alexandre-22007578">Github</a> ou através do email: <b>a22007578@alunos.ulht.pt</b>
+        </span>
+    </div>
+
+
+</div>
+{% endblock main %}

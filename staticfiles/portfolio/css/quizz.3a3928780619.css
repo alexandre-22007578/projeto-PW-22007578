@@ -1,0 +1,25 @@
+.container{
+    position: absolute;
+    background-image: url("../images/quizz.9e107ca5d914.gif");
+    color: #F8F8FF;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    padding-top: 75px;
+    z-index:-5;
+    margin-top:20px;
+
+}
+
+.errorlist{
+display:none;
+}
+
+
+h3 {
+	color: #00FF00;
+}
+

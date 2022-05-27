@@ -1,0 +1,73 @@
+.container{
+    position: absolute;
+    background-image: url("../images/blog.gif");
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-left: 50px;
+    padding-top: 75px;
+    z-index:-5;
+    margin-top:20px;
+
+}
+
+.Retangulos{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content:center;
+   margin-top: 65px;
+   margin-left: 20px;
+   padding: 30px;
+
+
+}
+
+.Retangulos div{
+    width: 250px;
+    height: 250px;
+    box-shadow: 0px 0px 0px 9px MidnightBlue;
+    border-radius: 10px;
+    background-color: Cornsilk;
+    padding: 20px;
+    margin: 15px;
+    line-height:22px;
+}
+
+.texto h3{
+    text-align: center;
+}
+
+.texto p{
+    text-align: left;
+    display: inline-block;
+
+}
+
+.texto span{
+    text-align: left;
+    color: OrangeRed;
+}
+
+.texto .spanWhite{
+    color: OrangeRed;
+}
+
+.NEWPOST div{
+
+    width: 250px;
+    height: 50px;
+    box-shadow: 0px 0px 0px 9px MidnightBlue;
+    border-radius: 10px;
+    background-color: Gold;
+    padding: 20px;
+    margin: 7px;
+    margin-left: 40%;
+
+    display:flex;
+    justify-content: center;
+
+}
+
+
