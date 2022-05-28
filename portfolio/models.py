@@ -70,3 +70,14 @@ class Cadeira(models.Model):
 
     def __str__(self):
         return self.nome[:200]
+
+class Tecnologias(models.Model):
+    nome = models.CharField(max_length=200)
+    acrónimo = models.CharField(max_length=5)
+    ano = models.IntegerField(default=0)
+    logotipo = models.ImageField(upload_to='media/', null=True, blank=True)
+    link = models.CharField(max_length=200)
+    descrição = models.CharField(max_length=50000)
+
+    def __str__(self):
+        return self.nome[:200]

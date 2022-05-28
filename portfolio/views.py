@@ -1,3 +1,4 @@
+import requests
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -8,6 +9,7 @@ from .models import Post
 from .models import Quizz
 from .models import Projetos
 from .models import Cadeira
+from .quizz import desenha_graficodados
 
 
 def home_page_view(request):
@@ -15,6 +17,9 @@ def home_page_view(request):
 
 def competencias(request):
     return render(request, 'portfolio/competencias.html')
+
+def web(request):
+    return render(request, 'portfolio/web.html')
 
 def formacao(request):
     context = {'cadeiras': Cadeira.objects.all()}
@@ -33,6 +38,7 @@ def blog(request):
 
 
 def quizzPage(request):
+    desenha_graficodados(Quizz.objects.all())
     quizz = QuizzForm(request.POST, use_required_attribute=False)
     if quizz.is_valid():
         quizz.save()

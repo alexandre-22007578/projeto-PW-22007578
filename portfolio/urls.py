@@ -4,7 +4,6 @@ from . import views
 app_name = 'portfolio'
 name = 'home'
 urlpatterns = [
-    path('', views.home_page_view, name='home'),
     path('home', views.home_page_view, name='home'),
     path('competencias', views.competencias, name='competencias'),
     path('formacao', views.formacao, name='formacao'),
@@ -17,6 +16,7 @@ urlpatterns = [
     path('apaga/<int:Post_id>', views.apaga_post_view, name='apaga'),
     path('login', views.loginSite, name='login'),
     path('logout', views.logoutSite, name='logout'),
+    path('web', views.web, name='web'),
 
 
     path('', views.home_page_view),
