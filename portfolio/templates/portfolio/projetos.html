@@ -20,8 +20,8 @@
         <div class="texto">
 
             {% load static %}
-            {% if not projeto.imagem null %}
-            <h3><img src="{{projeto.imagem.url}}" alt=""></h3>
+
+            <h3><img src="{{projeto.imagem}}" alt=""></h3>
 
             <li><b>{{projeto.nome}}</b></li>
             <li>Descrição: {{projeto.descrição}}</li>
@@ -53,7 +53,7 @@
 
         </div>
 
-        {% endif %}
+
         {% endfor %}
 
 
