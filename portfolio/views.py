@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
@@ -70,4 +71,25 @@ def apaga_post_view(request, Post_id):
     return HttpResponseRedirect(reverse('portfolio:blog'))
 
 
+def loginSite(request):
+    if request.method == "POST":
+        nome = request.POST.get('username')
+        password = request.POST.get('password')
+        utilizador = authenticate(request, username=nome, password=password)
 
+        if utilizador is not None:
+            login(request, utilizador)
+            context = {'post': Post.objects.all()}
+            return render(request, 'portfolio/blog.html', context)
+        else:
+            return render(
+                request, 'portfolio/login.html',
+                {'message': "Dados inválidos"}
+            )
+
+    return render(request, 'portfolio/login.html')
+
+
+def logoutSite(request):
+    logout(request)
+    return render(request, 'portfolio/login.html')
