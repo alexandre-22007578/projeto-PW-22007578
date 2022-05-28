@@ -14,13 +14,13 @@
     <div class="Retangulos">
 
 
-
         {% for projeto in projetos %}
 
 
         <div class="texto">
 
             {% load static %}
+            {% if not projeto.imagem null %}
             <h3><img src="{{projeto.imagem.url}}" alt=""></h3>
 
             <li><b>{{projeto.nome}}</b></li>
@@ -53,13 +53,12 @@
 
         </div>
 
-
+        {% endif %}
         {% endfor %}
 
 
     </div>
 </div>
-
 
 
 {% endblock main %}
