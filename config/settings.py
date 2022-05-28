@@ -1,4 +1,3 @@
-
 """
 Django settings for config project.
 
@@ -12,14 +11,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+#Para deploy
 from environs import Env
 
+#Necessario para as imagens
 import os
-
-
-
-env = Env()
-env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+
+#Para deploy
+env = Env()
+env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str("SECRET_KEY")
@@ -37,40 +37,31 @@ DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
+
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'cloudinary_storage',
-    'cloudinary',
     'django.contrib.auth',
-    'whitenoise.runserver_nostatic',  # novo
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic', # novo
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'portfolio',
 ]
-
-MEDIA_URL = '/portfolio/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-CLOUDINARY_STORAGE = {
-  'CLOUD_NAME': "dm2tujz3u",
-  'API_KEY': "627112469333275",
-  'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # novo
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', # novo
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -98,8 +89,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-      "default": env.dj_db_url("DATABASE_URL")
- }
+    "default": env.dj_db_url("DATABASE_URL")
+}
 
 
 # Password validation
@@ -137,13 +128,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]  # novo se a pasta static estiver na pasta da aplicação app, altere para str(BASE_DIR.joinpath('app/static'))
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
+#STATIC_URL = '/portfolio/static/'    # substitua nome_aplicacao pelo nome da sua aplicação
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+#Necessario para as imagens
+MEDIA_URL = '/portfolio/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "dm2tujz3u",
+  'API_KEY': "627112469333275",
+  'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
+}
+
+
+
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
