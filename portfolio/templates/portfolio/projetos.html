@@ -20,9 +20,33 @@
         <div class="texto">
 
 
-            {% if not projeto.imagem ==  null %}
+            {% if projeto.nome == "Sinais e Sistemas" %}
             {% load static %}
-            <h3><img src="{{projeto.imagem.url}}" alt="ERROR"></h3>
+            <img src="../../static/portfolio/images/sinais.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Sistema de rega" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/rega.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Xadrez" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/chess.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Carro Simulação" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/carro.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Salto astronauta" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/astronauta.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Jogo da Glória" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/LP2.png" alt="erro">
+            {% endif %}
+            {% if projeto.nome == "Base de Dados Musical (Java)" %}
+            {% load static %}
+            <img src="../../static/portfolio/images/AED.png" alt="erro">
             {% endif %}
 
             <li><b>{{projeto.nome}}</b></li>

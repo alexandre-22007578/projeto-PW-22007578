@@ -77,11 +77,17 @@ class Tecnologias(models.Model):
     acrónimo = models.CharField(max_length=5)
     ano = models.IntegerField(default=0)
     logotipo = models.ImageField(upload_to='media/', null=True, blank=True)
-    link = models.CharField(max_length=200)
     descrição = models.CharField(max_length=5000)
 
     def __str__(self):
         return self.nome[:200]
 
+class Noticia (models.Model):
+    titulo = models.CharField(max_length=200)
+    numero = models.IntegerField(default=0)
+    descrição = models.CharField(max_length=50000)
+    link = models.CharField(max_length=2000)
+    imagem = models.ImageField(upload_to='media/', null=True, blank=True)
 
-
+    def __str__(self):
+        return self.titulo[:200]

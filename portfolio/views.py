@@ -9,6 +9,9 @@ from .models import Post
 from .models import Quizz
 from .models import Projetos
 from .models import Cadeira
+from .models import Noticia
+from .models import Tecnologias
+
 from .quizz import desenha_graficodados
 
 
@@ -19,7 +22,8 @@ def competencias(request):
     return render(request, 'portfolio/competencias.html')
 
 def web(request):
-    return render(request, 'portfolio/web.html')
+    context = {'noticias': Noticia.objects.all(), 'tecnologias': Tecnologias.objects.all()}
+    return render(request, 'portfolio/web.html', context)
 
 def formacao(request):
     context = {'cadeiras': Cadeira.objects.all()}

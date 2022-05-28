@@ -7,6 +7,7 @@ from .models import Projetos
 from .models import Pessoas
 from .models import Cadeira
 from .models import Tecnologias
+from .models import Noticia
 
 admin.site.register(Post)
 admin.site.register(Quizz)
@@ -14,3 +15,4 @@ admin.site.register(Projetos)
 admin.site.register(Pessoas)
 admin.site.register(Cadeira)
 admin.site.register(Tecnologias)
+admin.site.register(Noticia)
