@@ -56,6 +56,11 @@ MEDIA_URL = '/portfolio/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "dm2tujz3u",
+  'API_KEY': "627112469333275",
+  'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -142,8 +147,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-CLOUDINARY_STORAGE = {
-  'CLOUD_NAME': "dm2tujz3u",
-  'API_KEY': "627112469333275",
-  'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
-}
