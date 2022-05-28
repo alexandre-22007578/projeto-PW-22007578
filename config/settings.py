@@ -41,6 +41,8 @@ ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.auth',
     'whitenoise.runserver_nostatic',  # novo
     'django.contrib.contenttypes',
@@ -49,6 +51,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolio',
 ]
+
+MEDIA_URL = '/portfolio/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,4 +141,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+
+CLOUDINARY_STORAGE = {
+  'CLOUD_NAME': "dm2tujz3u",
+  'API_KEY': "627112469333275",
+  'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
+}
