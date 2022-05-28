@@ -14,6 +14,9 @@ class Post(models.Model):
     def __str__(self):
         return self.titulo[:200]
 
+    class Meta:
+        ordering = ['-prioridade']
+
 
 class Quizz(models.Model):
     nome = models.CharField(max_length=200)

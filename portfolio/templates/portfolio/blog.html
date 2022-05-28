@@ -10,19 +10,13 @@
 {% block main %}
 <div class="container">
 
-    {% if not user.is_authenticated %}
+
     <div class="NEWPOST">
-        <div>
-            Para criar e editar novos POST faça login
-        </div>
-    </div>
-    {% endif %}
-    <div class="NEWPOST">
-        {% if user.is_authenticated %}
+
         <div>
             <a href="{% url 'portfolio:nova' %}" class="btn btn-success btn-block">+ Novo Post</a>
         </div>
-        {% endif %}
+
     </div>
     <br><br><br><br>
     <div class="Retangulos">
