@@ -7,6 +7,7 @@ from .models import Projetos
 from .models import Pessoas
 from .models import Cadeira
 from .models import Tecnologias2
+
 from .models import Noticia
 
 admin.site.register(Post)
