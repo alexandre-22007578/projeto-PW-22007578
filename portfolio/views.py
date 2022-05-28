@@ -42,7 +42,7 @@ def quizzPage(request):
     quizz = QuizzForm(request.POST, use_required_attribute=False)
     if quizz.is_valid():
         quizz.save()
-        return HttpResponseRedirect(request.patch_info)
+        return HttpResponseRedirect(request.path_info)
 
     context = {'form': quizz}
 

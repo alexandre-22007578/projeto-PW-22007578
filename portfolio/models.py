@@ -55,6 +55,7 @@ class Projetos(models.Model):
         return self.nome[:200]
 
 
+
     class Meta:
         ordering = ['-imagem']
 
