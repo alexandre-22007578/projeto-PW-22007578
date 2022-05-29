@@ -41,10 +41,10 @@ class QuizzForm(ModelForm):
     # texto a exibir junto à janela de inserção
         labels = {
             'nome': 'Qual o seu nome',
-            'pergunta1': 'Pergunta 1',
-            'pergunta2': 'Pergunta 2',
-            'pergunta3': 'Pergunta 3',
-            'pergunta4': 'Pergunta 4',
+            'pergunta1': 'Qual a ferramente responsável pela estilização de uma página web',
+            'pergunta2': 'Em que ano foi criado o django',
+            'pergunta3': 'Qual a linguagem de programação utilizada no django',
+            'pergunta4': 'Que outra linguagem de programação é usada na criação de uma web pag',
         }
 
 
