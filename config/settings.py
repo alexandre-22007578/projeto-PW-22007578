@@ -146,8 +146,6 @@ CLOUDINARY_STORAGE = {
   'API_SECRET': "tscc0ZL5NNRx2u3idTj2TCJGYLU",
 }
 
-
-
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('portfolio/static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))   # novo
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # novo
