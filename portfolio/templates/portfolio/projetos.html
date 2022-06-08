@@ -20,10 +20,11 @@
         <div class="texto">
 
 
-
-            <img  src="{{projeto.imagem}}.utl" alt="erro">
+            {% load static %}
+            <img src="{{projeto.imagem}}" alt="erro">
             <li><b>{{projeto.nome}}</b></li>
-            <li>Descrição: {{projeto.descrição}}</li>x
+            <li>Descrição: {{projeto.descrição}}</li>
+
             <li>Ano de realização: {{projeto.ano}}</li>
             <li>Participação:
                 {% for aluno in projeto.alunos.all %}
