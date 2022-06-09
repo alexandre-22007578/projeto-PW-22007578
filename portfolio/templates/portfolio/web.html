@@ -18,27 +18,18 @@
             <li>Acrónimo : {{tecnologia.acrónimo}}</li>
             <li>Ano de Criação: {{tecnologia.ano}}</li>
             <li>Descrição: {{tecnologia.descrição}}</li>
-            {% if tecnologia.acrónimo == "CSS" %}
-            <img src="../../static/portfolio/images/css.png" alt="erro">
-            {% endif %}
-            {% if tecnologia.acrónimo == "HTML" %}
-            <img src="../../static/portfolio/images/html.png" alt="erro">
-            {% endif %}
-            {% if tecnologia.acrónimo == "DJA" %}
-            <img src="../../static/portfolio/images/django.png" alt="erro">
-            {% endif %}
-            {% if tecnologia.acrónimo == "JS" %}
-            <img src="../../static/portfolio/images/javascript.png" alt="erro">
-            {% endif %}
+            <img src="{{tecnologia.logotipo2}}" alt="erro">
 
 
         </div>
 
         {% endfor %}
     </div>
+
     <div class="Retangulos">
         <div><a href="https://a22007578-pw-lab1.herokuapp.com">LABORATORIOS</a></div>
     </div>
+
     <div class="RetangulosNotifica">
         <div>NOTICIAS</div>
     </div>
@@ -53,57 +44,8 @@
 
             <li><b>titulo: {{noticia.titulo}}</b></li>
             <li>Descrição: {{noticia.descrição}}</li>
+            <img src="{{noticia.descrição}}" alt="erro">
 
-            {% if noticia.numero == 1 %}
-
-            <img src="../../static/portfolio/images/noticia1.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 2 %}
-
-            <img src="../../static/portfolio/images/noticia2.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 3 %}
-
-            <img src="../../static/portfolio/images/noticia3.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 4 %}
-
-            <img src="../../static/portfolio/images/noticia4.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 5 %}
-
-            <img src="../../static/portfolio/images/noticia5.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 6 %}
-
-            <img src="../../static/portfolio/images/noticia6.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 7 %}
-
-            <img src="../../static/portfolio/images/noticia7.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 8 %}
-
-            <img src="../../static/portfolio/images/noticia8.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 9 %}
-
-            <img src="../../static/portfolio/images/noticia9.png" alt="erro">
-
-            {% endif %}
-            {% if noticia.numero == 10 %}
-
-            <img src="../../static/portfolio/images/noticia10.png" alt="erro">
-
-            {% endif %}
 
             <li><a href="{{noticia.link}}">LINK</a></li>
 
