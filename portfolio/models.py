@@ -95,6 +95,7 @@ class Tecnologias2(models.Model):
         return self.nome[:200]
 
 
+
 class Noticia(models.Model):
     titulo = models.CharField(max_length=200)
     numero = models.IntegerField(default=0)
