@@ -88,6 +88,7 @@ class Tecnologias2(models.Model):
     acrónimo = models.CharField(max_length=5)
     ano = models.IntegerField(default=0)
     logotipo = models.ImageField(upload_to='media/', null=True, blank=True)
+    logotipo2 = models.URLField(max_length=500, null=True, blank=True)
     descrição = models.CharField(max_length=5000)
 
     def __str__(self):
