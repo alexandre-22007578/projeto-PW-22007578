@@ -19,7 +19,7 @@
 
         <div class="texto">
 
-            {% if not projeto.imagem2 == "" %}
+            {% if not projeto.imagem2 == "None" %}
             {% load static %}
             <img src="{{projeto.imagem2}}" alt="erro">
             {% endif %}
