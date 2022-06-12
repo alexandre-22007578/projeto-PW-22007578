@@ -17,7 +17,8 @@ urlpatterns = [
     path('login', views.loginSite, name='login'),
     path('logout', views.logoutSite, name='logout'),
     path('web', views.web, name='web'),
-
+    path('api', views.APIs, name='api'),
+    path('projetoFinalDeCurso', views.projetoFinalDeCurso, name='projetoFinalDeCurso'),
 
     path('', views.home_page_view),
 

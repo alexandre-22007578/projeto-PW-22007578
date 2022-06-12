@@ -103,3 +103,11 @@ def loginSite(request):
 def logoutSite(request):
     logout(request)
     return render(request, 'portfolio/login.html')
+
+
+
+def APIs(request):
+    return render(request, 'portfolio/api.html')
+
+def projetoFinalDeCurso(request):
+    return render(request, 'portfolio/projetoFinalDeCurso.html')
