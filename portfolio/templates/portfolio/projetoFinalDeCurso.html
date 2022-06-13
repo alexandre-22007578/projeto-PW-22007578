@@ -23,7 +23,7 @@
             {% load static %}
             <img src="{{projeto.imagem2}}" alt="erro">
             {% endif %}
-            <li>Autores:
+            <li><b>Autores:</b>
                 {% for aluno in projeto.autores.all %}
                 <ol>
                     {{aluno.nome}}
@@ -33,7 +33,7 @@
             </li>
             {% endfor %}
 
-            <li>Trabalho Orientado por:
+            <li><b>Trabalho Orientado por:</b>
                 {% for professor in projeto.orientadores.all %}
                 <ol>
                     {{professor.nome}}
@@ -43,13 +43,13 @@
             {% endfor %}
 
 
-            <li>Ano de realização: {{projeto.ano}}</li>
-            <li>Titulo: {{projeto.titulo}}</li>
+            <li><b> de realização:</b> {{projeto.ano}}</li>
+            <li><b>Titulo:</b> {{projeto.titulo}}</li>
 
-            <li>Resumo: {{projeto.resumo}}</li>
+            <li><b>Resumo:</b> {{projeto.resumo}}</li>
 
 
-            <li>Github (ou link): <a href="{{projeto.link}}">{{projeto.titulo}}</a>
+            <li><b>Github:</b> <a href="{{projeto.link}}">{{projeto.titulo}}</a>
 
             </li>
 
