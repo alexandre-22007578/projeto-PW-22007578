@@ -107,3 +107,15 @@ class Noticia(models.Model):
     def __str__(self):
         return self.titulo[:200]
 
+class ProjetoFinalDeCurso(models.Model):
+    autores = models.ManyToManyField(Pessoas, related_name="autores")
+    orientadores = models.ManyToManyField(Pessoas, related_name="orientadores")
+    ano = models.IntegerField(default=0)
+    titulo = models.CharField(max_length=2000)
+    resumo = models.CharField(max_length=200000)
+    imagem = models.ImageField(upload_to='media/', null=True, blank=True)
+    imagem2 = models.URLField(max_length=500, null=True, blank=True)
+    link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.titulo[:200]

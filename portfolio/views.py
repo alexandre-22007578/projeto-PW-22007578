@@ -11,6 +11,7 @@ from .models import Projetos
 from .models import Cadeira
 from .models import Noticia
 from .models import Tecnologias2
+from .models import ProjetoFinalDeCurso
 
 from .quizz import desenha_graficodados
 
@@ -110,4 +111,5 @@ def APIs(request):
     return render(request, 'portfolio/api.html')
 
 def projetoFinalDeCurso(request):
-    return render(request, 'portfolio/projetoFinalDeCurso.html')
+    context = {'projetosFinais': ProjetoFinalDeCurso.objects.all()}
+    return render(request, 'portfolio/projetoFinalDeCurso.html',context)

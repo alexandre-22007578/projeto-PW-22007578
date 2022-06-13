@@ -7,6 +7,7 @@ from .models import Projetos
 from .models import Pessoas
 from .models import Cadeira
 from .models import Tecnologias2
+from .models import ProjetoFinalDeCurso
 
 from .models import Noticia
 
@@ -17,3 +18,4 @@ admin.site.register(Pessoas)
 admin.site.register(Cadeira)
 admin.site.register(Tecnologias2)
 admin.site.register(Noticia)
+admin.site.register(ProjetoFinalDeCurso)

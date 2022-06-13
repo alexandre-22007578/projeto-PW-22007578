@@ -8,14 +8,60 @@
 {% endblock style %}
 
 {% block main %}
+
 <div class="container">
 
+    <div class="Retangulos">
 
 
+        {% for projeto in projetosFinais %}
+
+
+        <div class="texto">
+
+            {% if not projeto.imagem2 == None %}
+            {% load static %}
+            <img src="{{projeto.imagem2}}" alt="erro">
+            {% endif %}
+            <li>Autores:
+                {% for aluno in projeto.autores.all %}
+                <ol>
+                    {{aluno.nome}}
+
+                </ol>
+
+            </li>
+            {% endfor %}
+
+            <li>Trabalho Orientado por:
+                {% for professor in projeto.orientadores.all %}
+                <ol>
+                    {{professor.nome}}
+                    <a href="{{professor.link}}">INFO</a>
+                </ol>
+            </li>
+            {% endfor %}
+
+
+            <li>Ano de realização: {{projeto.ano}}</li>
+            <li>Titulo: {{projeto.titulo}}</li>
+
+            <li>Resumo: {{projeto.resumo}}</li>
+
+
+            <li>Github (ou link): <a href="{{projeto.link}}">{{projeto.titulo}}</a>
+
+            </li>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </div>
 </div>
 
+
 {% endblock main %}
-
-
-
-
