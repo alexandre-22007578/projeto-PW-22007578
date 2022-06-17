@@ -10,6 +10,7 @@
 {% block main %}
 
 <div class="container">
+
     {% if user.is_authenticated %}
 
     <div class="Retangulos2">
@@ -53,6 +54,7 @@
 
 
             <li><b>Ano de realização:</b> {{projeto.ano}}</li>
+
             <li><b>Titulo:</b> {{projeto.titulo}}</li>
 
             <li><b>Resumo:</b> {{projeto.resumo}}</li>
