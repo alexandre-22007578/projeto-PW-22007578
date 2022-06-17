@@ -10,6 +10,7 @@
 {% block main %}
 
 <div class="container">
+    {% if user.is_authenticated %}
 
     <div class="Retangulos2">
         <div>
@@ -18,7 +19,7 @@
                 um novo Projeto final de Curso</b></a>
         </div>
     </div>
-
+    {% endif %}
     <div class="Retangulos">
 
 
