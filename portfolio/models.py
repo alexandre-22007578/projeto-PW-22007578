@@ -48,7 +48,7 @@ class Projetos(models.Model):
     git = models.CharField(max_length=200, null=True, blank=True)
     alunos = models.ManyToManyField(Pessoas)
     imagem = models.ImageField(upload_to='media/', null=True, blank=True)
-    imagem2 = models.URLField(max_length=500, null=True , blank=True)
+    imagem2 = models.URLField(max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.nome[:200]

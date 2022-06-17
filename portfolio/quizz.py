@@ -40,7 +40,7 @@ def Pontuacao(input):
     if input.pergunta3 == "python":
         pontuacao += 5
 
-    if input.pergunta4 == "javascript":
+    if input.pergunta4.lower() == "javascript":
         pontuacao += 5
 
     return pontuacao
